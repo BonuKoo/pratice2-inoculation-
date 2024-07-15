@@ -1,0 +1,84 @@
+
+    <!--
+    <style>
+        table {
+            width: 100%; /* 전체 너비 */
+            border-collapse: collapse; /* 테두리 합치기 */
+        }
+
+        th, td {
+            border: 1px solid #ccc; /* 테두리 색상 */
+            padding: 10px; /* 패딩 */
+            text-align: center; /* 텍스트 중앙 정렬 */
+        }
+
+        th {
+            background-color: #f2f2f2; /* 헤더 배경 색상 */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* 짝수 행 배경 색상 */
+        }
+
+        tr:hover {
+            background-color: #e0e0e0; /* 마우스 오버 색상 */
+        }
+
+        .align-center {
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        .size-100 {
+            width: 100px;
+        }
+
+        .size-150 {
+            width: 150px;
+        }
+        .size-400{
+            width: 400px;
+        }
+    </style>
+    -->
+    <html layout:decorate="~{layout}">
+    <div layout:fragment="content" id="contents">
+        <section>
+            <br>
+            <h1>제품 조회</h1>
+            <br>
+            <table>
+                <thead>
+                <tr>
+                    <th class="size-100 align-center">고객번호</th>
+                    <th class="size-150 align-center">고객명</th>
+                    <th class="size-100 align-center">고객생년월일</th>
+                    <th class="size-100 align-right">성별</th>
+                    <th class="size-100 align-right">전화번호</th>
+                    <th class="size-100 align-right">지역</th>
+                </tr>
+                </thead>
+                <!--출력 부분-->
+                <tbody>
+                <tr th:each="dto : ${list}">
+                    <!--고객번호-->
+                    <td class="align-center" th:text="${dto.p_no}"></td>
+                    <!--고객명-->
+                    <td class="align-center" th:text="${dto.p_name}"></td>
+                    <!--생년월일 (나이)-->
+                    <td class="align-center" th:text="${dto.p_bday} + ' (' + ${dto.age} + '세)'"></td>
+                    <!--성별-->
+                    <td class="align-center" th:text="${dto.gender}"></td>
+                    <!--전화번호-->
+                    <td class="align-center" th:text="${dto.phone}"></td>
+                    <!--지역-->
+                    <td class="align-center" th:text="${dto.p_city}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</html>

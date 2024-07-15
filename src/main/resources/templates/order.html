@@ -1,0 +1,50 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" id="contents">
+    <section>
+        <br>
+        <h1>예방접종등록</h1>
+        <br>
+        <form name="orderForm" action="/regist" method="post" th:object="${orderDTO}">
+            <table>
+                <!-- 예방접종 이력번호-->
+                <tr>
+                    <td class="align-center size-150">예방접종이력번호</td>
+                    <td class="size-400">
+                        <input type="text" th:field="*{p_seno}" th:value="${nextNo}">예)20200001
+                    </td>
+                </tr>
+                <!-- 고객 번호-->
+                <tr>
+                    <td class="align-center">고객번호</td>
+                    <td>
+                        <input type="text" th:field="*{cust}">
+                    </td>
+                </tr>
+                <!-- 백신 코드-->
+                <tr>
+                    <td class="align-center">백신코드</td>
+                    <td>
+                        <input type="text" th:field="*{injection}">
+                    </td>
+                </tr>
+                <!-- 접종일자-->
+                <tr>
+                    <td class="align-center">접종일자</td>
+                    <td>
+                        <input type="text" th:field="*{p_date}">
+                    </td>
+                </tr>
+                <!-- 제출 폼-->
+                <tr>
+                    <td class="align-center" colspan="2">
+                        <input type="button" value="예방접종등록" onclick="registOrder()">
+                        <input type="reset" value="다시쓰기" onclick="resetOrder()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <script src="../static/js/script.js"></script>
+</div>
+</html>

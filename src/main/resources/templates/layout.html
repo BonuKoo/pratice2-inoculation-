@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>물류창고 입출고 프로그램</title>
+    <link href="./css/Style.css" rel="stylesheet">
+    <script src="./js/script.js"></script>
+</head>
+<body>
+<header>
+    <h1 class="header-title">물류 창고 입출고 프로그램 ver2020-02</h1>
+</header>
+
+<nav>
+    <ul id="menu">
+        <li><a href="cust">고객조회</a></li>
+        <li><a href="order">예방접종등록</a></li>
+        <li><a href="orderList">접종이력조회</a></li>
+        <li><a href="injection">백신별접종건수</a></li>
+        <li><a href="/">홈으로</a></li>
+    </ul>
+</nav>
+
+<th:block layout:fragment="content"></th:block>
+
+<footer>
+    <p class= "footer-content">copyright &copy; 2024 KOREA INFORMATUON TECHNOLOGY ACADEMY. ALL RIGHTS RESERVED</p>
+</footer>
+
+</body>
+</html>

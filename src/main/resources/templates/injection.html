@@ -1,0 +1,21 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" id="contents">
+    <section>
+        <br>
+        <h1>백신별 접종 건수</h1>
+        <br>
+        <table>
+            <tr>
+                <th class="size-150 align-center">백신코드</th>
+                <th class="size-150 align-center">백신주사명</th>
+                <th class="size-150 align-center">백신별 총 건수</th>
+            </tr>
+            <tr th:each="stat : ${injectionList}">
+                <td class="align-center" th:text="${stat.i_code}"></td>
+                <td class="align-center" th:text="${stat.i_name}"></td>
+                <td class="align-center" th:text="${stat.totalCount}"></td>
+            </tr>
+        </table>
+    </section>
+</div>
+</html>
